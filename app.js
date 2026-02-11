@@ -66,7 +66,7 @@ $(document).ready(function(){
         url: 'taskList.php',
         type: 'GET',
         success: function (response){
-            let tasks = JSON.parse(response);
+            let tasks = JSON.parse(response);//Este metodo transforma la cadena que contiene el objeto en un objeto
             let template = '';
             tasks.forEach(task => {
                 template += `
@@ -106,7 +106,7 @@ $(document).ready(function(){
             const task = JSON.parse(response);
             $('#name').val(task[0].name);
             $('#description').val(task[0].description);
-            console.log(task);
+           console.log(task);
         })
     })
 });
