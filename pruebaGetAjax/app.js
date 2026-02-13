@@ -1,19 +1,19 @@
 $(document).ready(function(){
-    $('#form').on('submit', function(e){
-    let x = $('#name').val();
-    let y = $('#coment').val();
-    console.log(x);
-    console.log(y);
+     //lista();
 
-    
-    let data = {//Dato capturado 
-        name : $('#name').val(),
-        coment : $('#coment').val()
+    $('#form').on('submit', function(e){
+ 
+    let data = {//Dato capturado
+        username : $('#username').val(),
+        tittle : $('#tittle').val(),
+        description : $('#description').val()
     };
+
+    console.log(data);
 
     $.post('index.php',data,function(response){//Dato enviado por POST -> index.php
         console.log(response);
-        lista()
+        lista();
     });
     e.preventDefault();
 
@@ -29,8 +29,8 @@ function lista(){
         list.forEach( item => {
             template += `
                 <tr>
-                    <td>${item.name}</td>
-                    <td>${item.text}</td>
+                    <td>${item.tittle}</td>
+                    <td>${item.description}</td>
                 </tr>
             `
         })
